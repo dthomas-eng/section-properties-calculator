@@ -1,238 +1,464 @@
 <!-- (C) 2020 VisualCalcs, LLC, all rights reserved-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="styles/mainCSSL.css">
-	<title>Section Properties Calculator Pro</title>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/mainCSSL.css" />
+    <title>Section Properties Calculator Pro</title>
+  </head>
+  <body>
     <div class="smokescreen" id="smokescreen"></div>
     <div class="snipcursor" id="snipcursor"></div>
     <div class="erasecursor" id="erasecursor"></div>
 
     <div class="loaderholder">
-        <div id = "loader"; class="loader"></div>
+      <div id="loader" ; class="loader"></div>
     </div>
 
     <div class="results" id="results">
-    	<div class="resultsgrab" id="resultsgrab">
-            <span class="resultsheader" id="resultsheader"><b>Results</b></span>
-        	<button class = "cancelbtn"; id = "cancelbtn" onclick="cancelClicked()">
-        	</button>
-        	<button class = "reshelpbtn"; id = "reshelpbtn" onclick="resultsHelpClicked()">
-        	</button>
-        </div>
-        <textarea class = "outputpopuptext"; id = "outputpopuptext"; ReadOnly = "true"; spellcheck="false"; name="outputpopuptext"; wrap="hard" value="Name of file \n Date And Time \n Area">
-        </textarea>
-        <div class="resultskeepout" id="resultskeepout"></div>
-    	<!--button class = "okbtn"; id = "okbtn" onclick="cancelClicked()">Got it!
-    	</button-->
+      <div class="resultsgrab" id="resultsgrab">
+        <span class="resultsheader" id="resultsheader"><b>Results</b></span>
+        <button
+          class="cancelbtn"
+          ;
+          id="cancelbtn"
+          onclick="cancelClicked()"
+        ></button>
+        <button
+          class="reshelpbtn"
+          ;
+          id="reshelpbtn"
+          onclick="resultsHelpClicked()"
+        ></button>
+      </div>
+      <textarea
+        class="outputpopuptext"
+        ;
+        id="outputpopuptext"
+        ;
+        readonly="true"
+        ;
+        spellcheck="false"
+        ;
+        name="outputpopuptext"
+        ;
+        wrap="hard"
+        value="Name of file \n Date And Time \n Area"
+      >
+      </textarea>
+      <div class="resultskeepout" id="resultskeepout"></div>
     </div>
 
     <div class="erroralert" id="erroralert">
-    	<div class="errorgrab" id="errorgrab">
-            <span class="errorheader" id="errorheader"></span>
-        	<button class = "errorreshelpbtn"; id = "errorreshelpbtn" onclick="errorHelpClicked()">
-        	</button>
-        </div>
-        <textarea class = "erroralerttext"; id = "erroralerttext"; ReadOnly = "true"; spellcheck="false"; name="erroralerttext"; wrap="hard">This is the error text!
-        </textarea>
-    	<button class = "errorokbtn"; id = "errorokbtn" onclick="errorcancelClicked()"><b>OK</b>
-    	</button>
+      <div class="errorgrab" id="errorgrab">
+        <span class="errorheader" id="errorheader"></span>
+        <button
+          class="errorreshelpbtn"
+          ;
+          id="errorreshelpbtn"
+          onclick="errorHelpClicked()"
+        ></button>
+      </div>
+      <textarea
+        class="erroralerttext"
+        ;
+        id="erroralerttext"
+        ;
+        readonly="true"
+        ;
+        spellcheck="false"
+        ;
+        name="erroralerttext"
+        ;
+        wrap="hard"
+      >
+This is the error text!
+        </textarea
+      >
+      <button
+        class="errorokbtn"
+        ;
+        id="errorokbtn"
+        onclick="errorcancelClicked()"
+      >
+        <b>OK</b>
+      </button>
     </div>
 
     <div class="clearalert" id="clearalert">
-    	<div class="cleargrab" id="cleargrab">
-            <span class="clearheader" id="clearheader"><b>Clear Screen?</b></span>
-        	<button class = "clearhelpbtn"; id = "clearhelpbtn" onclick="clearHelpClicked()">
-        	</button>
-        </div>
-        <textarea class = "clearalerttext"; id = "clearalerttext"; ReadOnly = "true"; spellcheck="false"; name="clearalerttext"; wrap="hard">Clear the screen? This action cannot be undone.
-        </textarea>
-    	<button class = "clearokbtn"; id = "clearokbtn" onclick="clearokClicked()"><b>OK</b>
-    	</button>
-    	<button class = "clearcancelbtn"; id = "clearcancelbtn" onclick="clearcancelClicked()"><b>Cancel</b>
-    	</button>
+      <div class="cleargrab" id="cleargrab">
+        <span class="clearheader" id="clearheader"><b>Clear Screen?</b></span>
+        <button
+          class="clearhelpbtn"
+          ;
+          id="clearhelpbtn"
+          onclick="clearHelpClicked()"
+        ></button>
+      </div>
+      <textarea
+        class="clearalerttext"
+        ;
+        id="clearalerttext"
+        ;
+        readonly="true"
+        ;
+        spellcheck="false"
+        ;
+        name="clearalerttext"
+        ;
+        wrap="hard"
+      >
+Clear the screen? This action cannot be undone.
+        </textarea
+      >
+      <button class="clearokbtn" ; id="clearokbtn" onclick="clearokClicked()">
+        <b>OK</b>
+      </button>
+      <button
+        class="clearcancelbtn"
+        ;
+        id="clearcancelbtn"
+        onclick="clearcancelClicked()"
+      >
+        <b>Cancel</b>
+      </button>
     </div>
 
     <div class="firstdimalert" id="firstdimalert">
-    	<div class="firstdimgrab" id="firstdimgrab">
-            <span class="firstdimheader" id="firstdimheader"><b>First Dimension</b></span>
-        	<button class = "firstdimhelpbtn"; id = "firstdimhelpbtn" onclick="firstdimHelpClicked()">
-        	</button>
-        </div>
-        <textarea class = "firstdimalerttext"; id = "firstdimalerttext"; ReadOnly = "true"; spellcheck="false"; name="firstdimalerttext"; wrap="hard">Enter first line length:
-        </textarea>
+      <div class="firstdimgrab" id="firstdimgrab">
+        <span class="firstdimheader" id="firstdimheader"
+          ><b>First Dimension</b></span
+        >
+        <button
+          class="firstdimhelpbtn"
+          ;
+          id="firstdimhelpbtn"
+          onclick="firstdimHelpClicked()"
+        ></button>
+      </div>
+      <textarea
+        class="firstdimalerttext"
+        ;
+        id="firstdimalerttext"
+        ;
+        readonly="true"
+        ;
+        spellcheck="false"
+        ;
+        name="firstdimalerttext"
+        ;
+        wrap="hard"
+      >
+Enter first line length:
+        </textarea
+      >
 
-	    <input class = "firstinput"; type="number" id ="firstinput"; autocomplete="off"; style="width: 40px;"/>
+      <input
+        class="firstinput"
+        ;
+        type="number"
+        id="firstinput"
+        ;
+        autocomplete="off"
+        ;
+        style="width: 40px"
+      />
 
-    	<button class = "firstdimokbtn"; id = "firstdimokbtn" onclick="firstdimokClicked()"><b>OK</b>
-    	</button>
-    	<button class = "firstdimcancelbtn"; id = "firstdimcancelbtn" onclick="firstdimcancelClicked()"><b>Cancel</b>
-    	</button>
+      <button
+        class="firstdimokbtn"
+        ;
+        id="firstdimokbtn"
+        onclick="firstdimokClicked()"
+      >
+        <b>OK</b>
+      </button>
+      <button
+        class="firstdimcancelbtn"
+        ;
+        id="firstdimcancelbtn"
+        onclick="firstdimcancelClicked()"
+      >
+        <b>Cancel</b>
+      </button>
     </div>
 
     <div class="prealert" id="prealert">
-    	<div class="pregrab" id="pregrab">
-            <span class="preheader" id="preheader"><b>Precision</b></span>
-        	<button class = "prehelpbtn"; id = "prehelpbtn" onclick="preHelpClicked()">
-        	</button>
-            <button class = "prexbtn"; id = "prexbtn" onclick="precancelClicked()">
-        	</button>
-        </div>
-        <textarea class = "prealerttext"; id = "prealerttext"; ReadOnly = "true"; spellcheck="false"; name="clearalerttext"; wrap="hard">Select display precision:
-        </textarea>
-        <select class = "precisionselection"; id="precisionselection">
-            <option value= "0">0</option>
-            <option value= "1">1</option>
-            <option value= "2" selected>2</option>
-            <option value= "3">3</option>
-        </select>
-    	<button class = "preokbtn"; id = "preokbtn" onclick="preokClicked()"><b>OK</b>
-    	</button>
-    	<button class = "precancelbtn"; id = "precancelbtn" onclick="precancelClicked()"><b>Cancel</b>
-    	</button>
+      <div class="pregrab" id="pregrab">
+        <span class="preheader" id="preheader"><b>Precision</b></span>
+        <button
+          class="prehelpbtn"
+          ;
+          id="prehelpbtn"
+          onclick="preHelpClicked()"
+        ></button>
+        <button
+          class="prexbtn"
+          ;
+          id="prexbtn"
+          onclick="precancelClicked()"
+        ></button>
+      </div>
+      <textarea
+        class="prealerttext"
+        ;
+        id="prealerttext"
+        ;
+        readonly="true"
+        ;
+        spellcheck="false"
+        ;
+        name="clearalerttext"
+        ;
+        wrap="hard"
+      >
+Select display precision:
+        </textarea
+      >
+      <select class="precisionselection" ; id="precisionselection">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+      </select>
+      <button class="preokbtn" ; id="preokbtn" onclick="preokClicked()">
+        <b>OK</b>
+      </button>
+      <button
+        class="precancelbtn"
+        ;
+        id="precancelbtn"
+        onclick="precancelClicked()"
+      >
+        <b>Cancel</b>
+      </button>
     </div>
 
     <div class="welcome" id="welcome">
-        <div class="welcomegrab" id="welcomegrab">
-            <span class="welcomeheader" id="welcomeheader"><b>Section Properties Calculator</b></span>
-        	<button class = "welcomecancelbtn"; id = "welcomecancelbtn" onclick="welcomecancelClicked()">
-        	</button>
-        </div>
-        	<div class="welcometxt" id = "welcometxt"><b>
-        	    Draw any closed shape and press the play button to analyze.<br><br>
-        	    <!--Demo version gives results for any shape with 4 or fewer lines.<br><br-->
-        	    Click "?" icon for tutorial.
-        	    <h5>By using this software you are agreeing to our <a target="_blank" href="disclaimerredir.html">User Agreement</a>
-        	    </b></div>
-        	    </h5>
-    	<button class = "okbtn"; id = "okbtn" onclick="welcomecancelClicked()"><b>Got it!</b>
-    	</button>
+      <div class="welcomegrab" id="welcomegrab">
+        <span class="welcomeheader" id="welcomeheader"
+          ><b>Section Properties Calculator</b></span
+        >
+        <button
+          class="welcomecancelbtn"
+          ;
+          id="welcomecancelbtn"
+          onclick="welcomecancelClicked()"
+        ></button>
+      </div>
+      <div class="welcometxt" id="welcometxt">
+        Draw any closed shape and press the play button to analyze.<br /><br />
+        Click "?" icon for tutorial.
+        <h5>
+          By using this software you are agreeing to our
+          <a target="_blank" href="disclaimerredir.html">User Agreement</a>
+        </h5>
+      </div>
+      <button class="okbtn" ; id="okbtn" onclick="welcomecancelClicked()">
+        <b>Got it!</b>
+      </button>
     </div>
 
     <div class="SaveRedir" id="SaveRedir">
-        <div class="SaveRedirgrab" id="SaveRedirgrab">
-            <span class="SaveRedirheader" id="SaveRedirheader"><b>Feature Locked</b></span>
-        	<button class = "SaveRedircancelbtn"; id = "SaveRedircancelbtn" onclick="SaveRedircancelClicked()">
-        	</button>
-        </div>
-        	<div class="SaveRedirwelcometxt" id = "SaveRedirwelcometxt"><b>
-        	    Upgrade to Pro to Save and Load Shapes!<br><br>
-        	</div>
-    	<button class = "SaveRedirokbtn"; id = "SaveRedirokbtn" onclick="SaveRedircancelClicked()"><b>Nope</b>
-    	<button class = "SaveRedirPricingbtn"; id = "SaveRedirPricingbtn" onclick="buyproclicked()"><b>Sure!</b>
-    	</button>
+      <div class="SaveRedirgrab" id="SaveRedirgrab">
+        <span class="SaveRedirheader" id="SaveRedirheader"
+          ><b>Feature Locked</b></span
+        >
+        <button
+          class="SaveRedircancelbtn"
+          ;
+          id="SaveRedircancelbtn"
+          onclick="SaveRedircancelClicked()"
+        ></button>
+      </div>
+      <div class="SaveRedirwelcometxt" id="SaveRedirwelcometxt">
+        Upgrade to Pro to Save and Load Shapes!<br /><br />
+      </div>
+      <button
+        class="SaveRedirokbtn"
+        ;
+        id="SaveRedirokbtn"
+        onclick="SaveRedircancelClicked()"
+      >
+        Nope
+      </button>
+      <button
+        class="SaveRedirPricingbtn"
+        ;
+        id="SaveRedirPricingbtn"
+        onclick="buyproclicked()"
+      >
+        Sure!
+      </button>
     </div>
 
     <div class="LinesRedir" id="LinesRedir">
-        <div class="LinesRedirgrab" id="LinesRedirgrab">
-            <span class="LinesRedirheader" id="LinesRedirheader"><b>Line Limit Exeeded</b></span>
-        	<button class = "LinesRedircancelbtn"; id = "LinesRedircancelbtn" onclick="LinesRedircancelClicked()">
-        	</button>
-        </div>
-        	<div class="LinesRedirwelcometxt" id = "LinesRedirwelcometxt"><b>
-        	    Demo mode supports shapes with up to 4 lines. Upgrade to Pro? <br><br>
-        	</div>
-    	<button class = "LinesRedirokbtn"; id = "LinesRedirokbtn" onclick="LinesRedircancelClicked()"><b>Nope</b>
-    	<button class = "LinesRedirPricingbtn"; id = "LinesRedirPricingbtn" onclick="buyproclicked()"><b>Sure!</b>
-    	</button>
+      <div class="LinesRedirgrab" id="LinesRedirgrab">
+        <span class="LinesRedirheader" id="LinesRedirheader"
+          ><b>Line Limit Exeeded</b></span
+        >
+        <button
+          class="LinesRedircancelbtn"
+          ;
+          id="LinesRedircancelbtn"
+          onclick="LinesRedircancelClicked()"
+        ></button>
+      </div>
+      <div class="LinesRedirwelcometxt" id="LinesRedirwelcometxt">
+        Demo mode supports shapes with up to 4 lines. Upgrade to Pro?
+        <br /><br />
+      </div>
+      <button
+        class="LinesRedirokbtn"
+        ;
+        id="LinesRedirokbtn"
+        onclick="LinesRedircancelClicked()"
+      >
+        Nope
+      </button>
+      <button
+        class="LinesRedirPricingbtn"
+        ;
+        id="LinesRedirPricingbtn"
+        onclick="buyproclicked()"
+      >
+        Sure!
+      </button>
     </div>
 
+    <canvas id="canvas"></canvas>
 
-	<canvas id="canvas"></canvas>
+    <div id="menubar">
+      <div class="pricinglink" ; id="pricinglink">
+        Currently in demo mode
+        <button class="buypro" ; id="buypro" onclick="buyproclicked()">
+          Get Pro!
+        </button>
+      </div>
+      <input
+        class="inputbox"
+        ;
+        type="number"
+        id="inputBox"
+        ;
+        display="none;"
+        autocomplete="off"
+        ;
+        style="width: 65px"
+      />
+      <textarea
+        class="outputboxcl"
+        ;
+        id="outputBox"
+        ;
+        readonly="true"
+        ;
+        spellcheck="false"
+        ;
+        rows="2"
+        cols="20"
+        name="outputBox"
+        wrap="hard"
+      >
+      </textarea>
 
-	<div id= "menubar">
-        <div class="pricinglink"; id="pricinglink">Currently in demo mode
-    			<button class = "buypro"; id = "buypro" onclick="buyproclicked()">Get Pro!</button>
-        </div>
-	    <input class = "inputbox"; type="number" id ="inputBox"; display =  none; autocomplete="off"; style="width: 65px;"/>
-        <textarea class = "outputboxcl"; id = "outputBox"; ReadOnly = "true"; spellcheck="false"; rows="2" cols="20" name="outputBox" wrap="hard">
-        </textarea>
+      <a target="_blank" href="homeredir.html">
+        <div id="logospace"></div>
+      </a>
+    </div>
+    <div id="toolsmenu">
+      <div id="toolsmenuinner">
+        <button onclick="Button6Clicked()" class="gobtn">
+          <span class="gobtntooltip">Get Section Properties!</span>
+        </button>
 
+        <button class="linesbtn" ; id="linesb" onclick="Button2Clicked()">
+          <span class="linesbtntooltip">Lines (l)</span>
+        </button>
 
-        <a target="_blank" href="homeredir.html">
-		    <div id = "logospace">
-		    </div>
-		</a>
-	</div>
-    <!--<div id = "toolsmenuouter-->
-        <div id = "toolsmenu">
-		    <div id ="toolsmenuinner">
+        <button
+          class="constlinesbtn"
+          ;
+          id="constlinesb"
+          onclick="ConstLinesClicked()"
+        >
+          <span class="constlinesbtntooltip">Construction Lines (c)</span>
+        </button>
 
-    			<button onclick="Button6Clicked()" class = "gobtn"</button>
-    		    <span class="gobtntooltip">Get Section Properties!</span>
+        <button class="filletsbtn" ; id="filletsb" onclick="Button3Clicked()">
+          <span class="filletsbtntooltip">Fillets (f)</span>
+        </button>
 
-    			<button class = "linesbtn"; id = "linesb" onclick="Button2Clicked()">
-    		    <span class="linesbtntooltip">Lines (l)</span>
+        <span class="filletsInput" id="filletsInput"
+          >Radius:
+          <input
+            class="filletRadius"
+            type="number"
+            id="filletRadius"
+            name="filletRadius"
+          />
+        </span>
 
-    			<button class = "constlinesbtn"; id = "constlinesb" onclick="ConstLinesClicked()">
-    		    <span class="constlinesbtntooltip">Construction Lines (c)</span>
+        <button class="snipbtn" ; id="snipb" onclick="SnipClicked()">
+          <span class="snipbtntooltip">Trim (t)</span>
+        </button>
 
-    			<button class = "filletsbtn"; id = "filletsb" onclick="Button3Clicked()">
-    		    <span class="filletsbtntooltip">Fillets (f)</span>
+        <button class="erasebtn" ; id="eraseb" onclick="EraseClicked()">
+          <span class="erasebtntooltip">Erase (e)</span>
+        </button>
 
-    		    <span class="filletsInput" id = "filletsInput">Radius:
-                <input class = "filletRadius" type="number" id="filletRadius" name="filletRadius">
-                </span>
+        <button
+          class="dimlinesbtn"
+          ;
+          id="dimlinesb"
+          onclick="DimLinesClicked()"
+        >
+          <span class="dimlinesbtntooltip">Linear Dimension (d)</span>
+        </button>
 
-    			<button class = "snipbtn"; id = "snipb" onclick="SnipClicked()">
-    		    <span class="snipbtntooltip">Trim (t)</span>
+        <button
+          class="dimanglesbtn"
+          ;
+          id="dimanglesb"
+          onclick="DimAnglessClicked()"
+        >
+          <span class="dimanglesbtntooltip">Angular Dimension (a)</span>
+        </button>
 
-    			<button class = "erasebtn"; id = "eraseb" onclick="EraseClicked()">
-    		    <span class="erasebtntooltip">Erase (e)</span>
+        <button class="undobtn" ; id="undob" onclick="undoClicked()">
+          <span class="undobtntooltip">Undo (ctrl-z)</span>
+        </button>
 
-    			<button class = "dimlinesbtn"; id = "dimlinesb" onclick="DimLinesClicked()">
-    		    <span class="dimlinesbtntooltip">Linear Dimension (d)</span>
+        <button class="redobtn" ; id="redob" onclick="redoClicked()">
+          <span class="redobtntooltip">Redo (ctrl-r)</span>
+        </button>
 
-    			<button class = "dimanglesbtn"; id = "dimanglesb" onclick="DimAnglessClicked()">
-    		    <span class="dimanglesbtntooltip">Angular Dimension (a)</span>
+        <button class="clearbtn" ; id="clearb" onclick="clearClicked()">
+          <span class="clearbtntooltip">Clear</span>
+        </button>
 
-    		    <!--This stuff below is for the 3 new buttons -->
+        <button
+          class="precisionbtn"
+          ;
+          id="precisionb"
+          onclick="Button8Clicked()"
+        >
+          <span class="precisionbtntooltip">Change Dimension Precision</span>
+        </button>
 
-    			<button class="undobtn"; id = "undob" onclick="undoClicked()">
-    		    <span class="undobtntooltip">Undo (ctrl-z)</span>
+        <button onclick="Button7Clicked()" ; class="savebtn">
+          <span class="savebtntooltip">Save Shape</span>
+        </button>
 
-    			<button class="redobtn"; id = "redob" onclick="redoClicked()">
-    		    <span class="redobtntooltip">Redo (ctrl-r)</span>
+        <button onclick="LoadClicked()" ; class="loadbtn">
+          <span class="loadbtntooltip">Load Shape</span>
+        </button>
 
-    			<button class="clearbtn"; id = "clearb" onclick="clearClicked()">
-    		    <span class="clearbtntooltip">Clear</span>
-
-    		    <!--End new buttons -->
-
-    			<button class="precisionbtn"; id = "precisionb" onclick="Button8Clicked()">
-    		    <span class="precisionbtntooltip">Change Dimension Precision</span>
-
-    			<button onclick="Button7Clicked()"; class = "savebtn">
-    		    <span class="savebtntooltip">Save Shape</span>
-    			</button>
-
-
-    			<button onclick="LoadClicked()"; class = "loadbtn">
-    		    <span class="loadbtntooltip">Load Shape</span>
-    			</button>
-
-    	    	<!--label class="custom-file-upload">
-                    <input type='file'; id='fileinput'/>
-                        <span class="custom-file-uploadtooltip">Load Shape</span>
-                    <i class="fa fa-cloud-upload"></i>
-                <!--/label>
-
-                <!--a target="_blank" href="tutredir.html">
-    		    <!--span class="custom-file-uploadtooltip">Load Shape</span-->
-
-    		    <button onclick="Button9Clicked()" class = "helpbtn">
-    	        <span class="helpbtntooltip">Tutorial/Help</span>
-			</div>
-
-	    </div>
-    <!--</div>-->
-	<script src = "FontSize.js"></script>
-	<!--script src = "L141A41e51dAA.js"></script-->
-	<script src = "LiteVersionUnob.js"></script>
-
-</body>
+        <button onclick="Button9Clicked()" class="helpbtn">
+          <span class="helpbtntooltip">Tutorial/Help</span>
+        </button>
+      </div>
+    </div>
+    <script src="FontSize.js"></script>
+    <script src="spcLite.js"></script>
+  </body>
 </html>
